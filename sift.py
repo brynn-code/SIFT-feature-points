@@ -42,7 +42,9 @@ def sift_image_alignment(img1, img2):
                            flags=2)
         img3 = cv2.drawMatches(img1, kp1, img2, kp2, goodMatch, None, **draw_params)
 
-        plt.imshow(img3, 'gray')
+        img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2RGB)
+
+        plt.imshow(img3)
         plt.show()
 
 img1 = cv2.imread('target.jpg')
